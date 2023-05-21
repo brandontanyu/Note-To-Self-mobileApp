@@ -32,5 +32,37 @@ public class DialogNewNote extends DialogFragment {
         Button btnOK = dialogView.findViewById(R.id.btnOk);
 
 
+        //Title for the dialog for the `Add New Note window`
+        builder.setView(dialogView).setMessage("Add a new note");
+        // Handle the cancel button
+        btnCancel.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+        // `dismiss() is a public method in DialogFragment class`
+                dismiss();
+            }
+        });
+
+        btnOK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+        // Create a new note
+                Note newNote = new Note();
+        // Set its variables to match the
+        // user's entries on the form
+                newNote.setTitle(editTitle.getText().toString());
+                newNote.setDescription(editDescription.getText().toString());
+                newNote.setIdea(checkBoxIdea.isChecked());
+                newNote.setTodo(checkBoxTodo.isChecked());
+                newNote.setImportant(checkBoxImportant.isChecked());
+       // Get a reference to MainActivity
+                MainActivity callingActivity = (MainActivity) getActivity();
+       // Pass newNote back to MainActivity
+                callingActivity.createNewNote(newNote);
+// Quit the dialog
+                dismiss();
+            }
+        });
+        return builder.create();
     }
 }
