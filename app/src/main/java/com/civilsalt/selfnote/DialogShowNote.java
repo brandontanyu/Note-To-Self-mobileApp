@@ -59,7 +59,6 @@ public class DialogShowNote extends DialogFragment {
         return builder.create();
     }
 
-
     // Receive a note from the MainActivity
     public void sendNoteSelected(Note noteSelected) {
         mNote = noteSelected;
