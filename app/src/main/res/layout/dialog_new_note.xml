@@ -74,7 +74,7 @@
 
     <EditText
         android:id="@+id/editTitle"
-        android:layout_width="wrap_content"
+        android:layout_widt h="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
