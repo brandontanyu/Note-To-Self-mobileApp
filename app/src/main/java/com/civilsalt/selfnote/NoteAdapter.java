@@ -17,9 +17,8 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.listItemHolder
 
     //NoteAdapter constructor
     public NoteAdapter(MainActivity mainActivity, List<Note> noteList){
-        mNoteList = noteList;
-        mMainActivity = mainActivity;
-
+       this.mNoteList = noteList;
+        this.mMainActivity = mainActivity;
     }
 
     //This method is called when a layout for list item is required
@@ -35,20 +34,21 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.listItemHolder
     @Override
     public void onBindViewHolder(@NonNull NoteAdapter.listItemHolder holder, int position) {
         Note note = mNoteList.get(position);
+
         holder.mTitle.setText(note.getTitle());
+
         /*
          Show the first 15 characters of the actual note
          Unless a short note then show half
          */
 
         if(note.getDescription().length() > 15) {
-            holder.mDescription.setText(note.getDescription()
-                    .substring(0, 15));
+            holder.mDescription.setText(note.getDescription().substring(0, 15));
         }
         else{
-            holder.mDescription.setText(note.getDescription()
-                    .substring(0, note.getDescription().length() /2 ));
+            holder.mDescription.setText(note.getDescription().substring(0, note.getDescription().length() /2 ));
         }
+
        // What is the status of the note?
         if(note.isIdea()){
             holder.mStatus.setText(R.string.idea_text);
@@ -83,7 +83,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.listItemHolder
         public listItemHolder(@NonNull View itemView) {
             super(itemView);
 
-            mTitle = itemView.findViewById(R.id.txtViewTextTitle);
+            mTitle = itemView.findViewById(R.id.txtViewTitle);
             mDescription =itemView.findViewById(R.id.txtViewDescription);
             mStatus =itemView.findViewById(R.id.txtViewStatus);
 

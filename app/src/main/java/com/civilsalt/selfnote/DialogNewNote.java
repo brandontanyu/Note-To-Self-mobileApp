@@ -14,6 +14,8 @@ import androidx.fragment.app.DialogFragment;
 
 public class DialogNewNote extends DialogFragment {
 
+    private Note mNote;
+
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
 
@@ -29,7 +31,7 @@ public class DialogNewNote extends DialogFragment {
         final CheckBox checkBoxTodo = dialogView.findViewById(R.id.checkBoxTodo);
         final CheckBox checkBoxImportant = dialogView.findViewById(R.id.checkBoxImportant);
         Button btnCancel = dialogView.findViewById(R.id.btnCancel);
-        Button btnOK = dialogView.findViewById(R.id.btnOk);
+        Button btnOK = dialogView.findViewById(R.id.btnOK);
 
 
         //Title for the dialog for the `Add New Note window`
