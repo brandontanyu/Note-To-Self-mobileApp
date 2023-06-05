@@ -24,7 +24,6 @@ public class DialogNewNote extends DialogFragment {
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View dialogView = inflater.inflate(R.layout.dialog_new_note, null);
 
-
         final EditText editTitle = dialogView.findViewById(R.id.editTitle);
         final EditText editDescription = dialogView.findViewById(R.id.editDescription);
         final CheckBox checkBoxIdea = dialogView.findViewById(R.id.checkBoxIdea);
